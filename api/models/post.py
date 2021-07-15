@@ -10,7 +10,8 @@ class Post(models.Model):
     tags = models.CharField(max_length=100)
     owner = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="posts"
     )
 
     def __str__(self):
